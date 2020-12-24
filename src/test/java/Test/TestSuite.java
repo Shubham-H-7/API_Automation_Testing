@@ -14,12 +14,14 @@ public class TestSuite {
 
     @Test(priority = 1)
     public void test_Get_1() {
+
         extent = BaseMethod.extentReport();
         ExtentTest test1 = extent.createTest("GET_TestCase_1");
+        String className = this.getClass().getSimpleName();
         test1.log(Status.INFO, "Test Started");
         BaseMethod.getMethod("https://reqres.in/api/users?page=2");
-        test1.pass("Test Case is passed");
-        test1.log(Status.INFO, "Time taken by url to response " + RestUtil.responseTime("https://reqres.in/api/users?page=2") + " Seconds");
+        test1.pass("Test completed and passed");
+        test1.log(Status.INFO, "Time taken by url to response " + RestUtil.responseTime("https://reqres.in/api/users?page=2") + " MILLISECONDS");
     }
 
     @Test(priority = 2)
@@ -28,30 +30,30 @@ public class TestSuite {
         ExtentTest test2 = extent.createTest("GET_TestCase_Query1");
         test2.log(Status.INFO, "Test started");
         SampleAPI.getParaMethod("CUSTOMER_ID", "68195", "PASSWORD", "1234", "Account_No", "1", "http://demo.guru99.com/V4/sinkministatement.php");
-        test2.pass("Test Case is passed");
+        test2.pass("Test completed and passed");
         test2.log(Status.INFO, "Details of query GET has been fetched");
-        test2.log(Status.INFO, "Time taken by url to response " + RestUtil.responseTime("http://demo.guru99.com/V4/sinkministatement.php") + " Seconds");
+        test2.log(Status.INFO, "Time taken by url to response " + RestUtil.responseTime("http://demo.guru99.com/V4/sinkministatement.php") + " MILLISECONDS");
     }
 
     @Test(priority = 3)
     public void test_Post() {
 
-        ExtentTest test3 = extent.createTest("POST_Test_Case_1");
+        ExtentTest test3 = extent.createTest("POST_TestCase_1");
         test3.log(Status.INFO, "Test started");
         SampleAPI.getPOSTMethod("name", "morpheus", "job", "leader", "https://reqres.in/api/users");
-        test3.pass("Test Case is passed");
-        test3.log(Status.INFO, "Time taken by url to response " + RestUtil.responseTime("http://demo.guru99.com/V4/sinkministatement.php") + " Seconds");
+        test3.pass("Test completed and passed");
+        test3.log(Status.INFO, "Time taken by url to response " + RestUtil.responseTime("http://demo.guru99.com/V4/sinkministatement.php") + " MILLISECONDS");
 
     }
 
     @Test(priority = 4)
     public void test_Put() {
 
-        ExtentTest test4 = extent.createTest("PUT_Test_Case_1");
+        ExtentTest test4 = extent.createTest("PUT_TestCase_1");
         test4.log(Status.INFO, "Test Started");
         SampleAPI.getPUTMethod("name", "morpheus", "job", "zion resident", "Content-Tye", "application/json", "https://reqres.in/api/users/2");
-        test4.pass("Test Case is passed");
-        test4.log(Status.INFO, "Time taken by url to response " + RestUtil.responseTime("https://reqres.in/api/users/2") + " Seconds");
+        test4.pass("Test completed and passed");
+        test4.log(Status.INFO, "Time taken by url to response " + RestUtil.responseTime("https://reqres.in/api/users/2") + " MILLISECONDS");
     }
 
     @AfterClass

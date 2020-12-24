@@ -8,10 +8,12 @@ import static io.restassured.RestAssured.*;
 public class SampleAPI {
 
     public static void getParaMethod(String q1, String p1, String q2, String p2, String q3, String p3, String url) {
+
         given().queryParam(q1, p1).queryParam(q2, p2).queryParam(q3, p3).when().get(url).then().log().body();
     }
 
     public static void getPOSTMethod(String name1, String surname1, String name2, String surname2, String path) {
+
         JSONObject request = new JSONObject();
         request.put(name1, surname1);
         request.put(name2, surname2);
@@ -20,6 +22,7 @@ public class SampleAPI {
     }
 
     public static void getPUTMethod(String name1, String surname1, String name2, String surname2, String name, String value, String path) {
+
         JSONObject request = new JSONObject();
         request.put(name1, surname1);
         request.put(name2, surname2);
