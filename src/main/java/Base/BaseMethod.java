@@ -11,7 +11,7 @@ public class BaseMethod {
 
         ExtentHtmlReporter htmlReporter;
         ExtentReports extent;
-        htmlReporter = new ExtentHtmlReporter("extentReports.html");
+        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"\\ExtentReportResults.html");
         extent = new ExtentReports();
         extent.setSystemInfo("Environment", "Automation Testing");
         extent.setSystemInfo("Application Name", "ExtentReport");
