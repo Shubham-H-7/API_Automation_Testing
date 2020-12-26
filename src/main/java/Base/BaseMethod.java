@@ -7,7 +7,6 @@ import static io.restassured.RestAssured.*;
 
 public class BaseMethod {
 
-
     public static ExtentReports extentReport() {
 
         ExtentHtmlReporter htmlReporter;
